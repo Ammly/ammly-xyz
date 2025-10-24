@@ -42,6 +42,7 @@ const defaultLinks: NavLink[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 

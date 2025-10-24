@@ -1,6 +1,9 @@
 import { getAllPosts } from "@/lib/mdx";
 import { BlogPostList } from "@/components/ui/blog-post-list";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,6 +22,14 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
+        {/* Back Button */}
+        <Link href="/#blog" className="inline-block mb-8">
+          <Button variant="outline" size="sm">
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Home
+          </Button>
+        </Link>
+
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <Badge variant="primary" size="lg" className="mb-4">

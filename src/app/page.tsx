@@ -1,5 +1,5 @@
 import { Navigation } from "@/components/layout";
-import { HeroSection, VenturesSection, ExperienceTimeline, ContactSection } from "@/components/sections";
+import { HeroSection, VenturesSection, ExperienceTimeline, BlogSection, ContactSection } from "@/components/sections";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
         <HeroSection />
         <VenturesSection />
         <ExperienceTimeline />
+        <BlogSection />
         <ContactSection />
       </main>
     </div>

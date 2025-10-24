@@ -80,7 +80,7 @@ const defaultCTAButtons: CTAButton[] = [
   {
     label: "View Ventures",
     href: "#projects",
-    variant: "primary",
+    variant: "outline",
   },
   {
     label: "GitHub",
