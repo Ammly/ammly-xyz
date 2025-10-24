@@ -19,8 +19,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ammly XYZ",
-  description: "Professional Next.js application",
+  title: "Ammly",
+  description: "Full-stack software engineer specializing in AI/ML systems, distributed architecture, and cloud-native solutions. Building scalable applications with Python, TypeScript, Laravel and modern web technologies.",
 };
 
 export default function RootLayout({
