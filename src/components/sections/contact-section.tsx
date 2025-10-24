@@ -231,7 +231,7 @@ export function ContactSection({
                 "opacity-100 translate-y-0"
               )}
             >
-              <Card className="relative overflow-hidden border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-950/30">
+              <Card className="relative overflow-hidden border-2 border-green-500 dark:border-green-600 bg-success-50 dark:bg-success-950/30 shadow-lg shadow-green-500/20">
                 <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-success-500 to-success-600" />
                 
                 <div className="p-6 md:p-8">
