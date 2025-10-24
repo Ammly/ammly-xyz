@@ -154,11 +154,14 @@ export function ContactSection({
     if (typeof window === "undefined") return;
 
     const params = new URLSearchParams(window.location.search);
-    const event = params.get("event");
-    const inviteeName = params.get("invitee_name");
+    
+    // Calendly redirects with event_type_uuid when booking is successful
+    const eventTypeUuid = params.get("event_type_uuid");
+    const inviteeName = params.get("invitee_full_name") || params.get("invitee_first_name");
     const eventStartTime = params.get("event_start_time");
 
-    if (event === "scheduled") {
+    // If event_type_uuid exists, it means booking was successful
+    if (eventTypeUuid) {
       setShowSuccess(true);
       setEventDetails({
         inviteeName: inviteeName || undefined,
@@ -171,7 +174,7 @@ export function ContactSection({
       }, 100);
 
       // Clean URL without reloading page
-      const cleanUrl = window.location.pathname;
+      const cleanUrl = window.location.pathname + window.location.hash;
       window.history.replaceState({}, document.title, cleanUrl);
     }
   }, []);
