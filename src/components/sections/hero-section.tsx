@@ -99,8 +99,8 @@ const defaultCTAButtons: CTAButton[] = [
 ];
 
 export function HeroSection({
-  headline = "Building AI Solutions That Scale",
-  gradientText = "Across African Markets",
+  headline = "Scaling AI Across",
+  gradientText = "Africa",
   introduction = "I'm a full-stack developer and entrepreneur passionate about creating products that make a difference. Specializing in modern web technologies, AI integration, and scalable solutions.",
   achievements = defaultAchievements,
   ctaButtons = defaultCTAButtons,
