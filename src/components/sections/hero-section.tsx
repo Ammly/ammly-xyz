@@ -245,7 +245,7 @@ export function HeroSection({
                 className={cn(
                   "inline-block bg-linear-to-r from-primary-600 via-primary-500 to-primary-700",
                   "dark:from-primary-400 dark:via-primary-300 dark:to-primary-500",
-                  "bg-clip-text text-transparent",
+                  "bg-clip-text",
                   "animate-gradient bg-size-[200%_auto]"
                 )}
                 style={{
