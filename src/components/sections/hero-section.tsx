@@ -99,8 +99,8 @@ const defaultCTAButtons: CTAButton[] = [
 ];
 
 export function HeroSection({
-  headline = "Building the Future of",
-  gradientText = "Digital Innovation",
+  headline = "Building AI Solutions That Scale",
+  gradientText = "Across African Markets",
   introduction = "I'm a full-stack developer and entrepreneur passionate about creating products that make a difference. Specializing in modern web technologies, AI integration, and scalable solutions.",
   achievements = defaultAchievements,
   ctaButtons = defaultCTAButtons,
@@ -185,7 +185,7 @@ export function HeroSection({
             }}
           >
             <Badge variant="success" size="lg" dot dotColor="#10b981">
-              Available for new opportunities
+              Open to collaboration on high-impact ventures
             </Badge>
           </div>
 
