@@ -84,45 +84,20 @@ const defaultCTAButtons: CTAButton[] = [
   },
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/ammly",
     variant: "outline",
     icon: <Github className="h-4 w-4" />,
     external: true,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/ammly",
     variant: "outline",
     icon: <Linkedin className="h-4 w-4" />,
     external: true,
   },
 ];
 
-/**
- * Hero Section Component
- * 
- * PERFORMANCE OPTIMIZATIONS:
- * 
- * 1. CSS-based animations (GPU-accelerated)
- *    - Uses transform & opacity (composited properties)
- *    - Avoids layout thrashing (no width/height/top/left)
- *    - Hardware acceleration via will-change hint
- * 
- * 2. Intersection Observer for animations
- *    - Animations trigger only when visible
- *    - Reduces unnecessary computations
- *    - Better mobile battery life
- * 
- * 3. Staggered delays via CSS
- *    - No JavaScript animation loops
- *    - Browser-optimized requestAnimationFrame
- *    - Consistent 60fps performance
- * 
- * 4. Gradient text via CSS
- *    - No SVG or canvas overhead
- *    - Native text rendering performance
- *    - Scales perfectly on all displays
- */
 export function HeroSection({
   headline = "Building the Future of",
   gradientText = "Digital Innovation",
@@ -138,18 +113,6 @@ export function HeroSection({
   const [isVisible, setIsVisible] = React.useState(false);
   const heroRef = React.useRef<HTMLElement>(null);
 
-  /**
-   * INTERSECTION OBSERVER SETUP
-   * 
-   * Why use Intersection Observer?
-   * - Native browser API (highly optimized)
-   * - Fires only when element enters viewport
-   * - Better than scroll listeners (no layout calculations)
-   * - Automatically handles throttling/debouncing
-   * 
-   * threshold: 0.1 = trigger when 10% visible
-   * rootMargin: Start animation slightly before entering viewport
-   */
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -249,19 +212,7 @@ export function HeroSection({
                   "animate-gradient bg-size-[200%_auto]"
                 )}
                 style={{
-                  /**
-                   * GRADIENT ANIMATION PERFORMANCE
-                   * 
-                   * will-change: background-position
-                   * - Hints browser to optimize this property
-                   * - Creates separate compositor layer
-                   * - GPU-accelerated animation
-                   * 
-                   * Background position (not gradient itself)
-                   * - Animating gradient values = expensive CPU work
-                   * - Animating position = cheap GPU work
-                   * - 200% width gives smooth scrolling effect
-                   */
+                  
                   willChange: "background-position",
                 }}
               >
@@ -387,41 +338,3 @@ export function HeroSection({
     </section>
   );
 }
-
-/**
- * ANIMATION PERFORMANCE NOTES:
- * 
- * Why these animations are fast:
- * 
- * 1. Transform & Opacity Only
- *    ✅ translate-y: GPU composited
- *    ✅ opacity: GPU composited
- *    ❌ top/left/margin: Triggers layout (slow)
- * 
- * 2. Staggered Delays
- *    - Each element: +100ms delay
- *    - Creates professional cascade effect
- *    - No JavaScript setTimeout overhead
- *    - Browser handles timing optimally
- * 
- * 3. Intersection Observer
- *    - Animations only when visible
- *    - No wasted cycles on off-screen elements
- *    - Better mobile battery life
- * 
- * 4. will-change Hint
- *    - Tells browser to prepare for animation
- *    - Creates compositor layer upfront
- *    - Prevents janky first frame
- * 
- * 5. CSS Transitions (not JS)
- *    - Browser optimizes automatically
- *    - Uses requestAnimationFrame internally
- *    - Respects prefers-reduced-motion
- * 
- * Performance Metrics:
- * - First paint: < 16ms
- * - Animation frame rate: 60fps
- * - Layout shifts: 0 (no CLS)
- * - Paint operations: Minimal (composited layers)
- */
